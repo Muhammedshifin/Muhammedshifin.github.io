@@ -54,6 +54,24 @@
         <p><small>&copy; 2022 kanged from - sycinue-rdc <i class="fab fa-github"></i> . All Rights Reserved.</small></p>
     </footer>
 
-    
+    <script>
+      // Function to create a snowflake
+      function createSnowflake() {
+        const snowflake = document.createElement("span");
+        snowflake.classList.add("snowflake");
+        snowflake.innerHTML = "&#10052;"; // Unicode character for snowflake
+        snowflake.style.left = Math.random() * window.innerWidth + "px";
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+        snowflake.style.opacity = Math.random();
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, 5000);
+      }
+
+      // Generate snowflakes periodically
+      setInterval(createSnowflake, 100);
+    </script>
 </body>
 </html>
